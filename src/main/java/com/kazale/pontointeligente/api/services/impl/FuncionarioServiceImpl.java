@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class FuncionarioServiceImpl implements FuncionarioService {
 
-    private static final Logger log = LoggerFactory.getLogger(FuncionarioService.class);
+    private static final Logger log = LoggerFactory.getLogger(FuncionarioServiceImpl.class);
 
     @Autowired
     private FuncionarioRepository funcionarioRepository;
