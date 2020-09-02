@@ -2,9 +2,8 @@ package com.kazale.pontointeligente.api.services;
 
 import com.kazale.pontointeligente.api.entities.Lancamento;
 import com.kazale.pontointeligente.api.repositories.LancamentoRepository;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +13,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
 public class LancamentoServiceTest {
@@ -33,7 +30,7 @@ public class LancamentoServiceTest {
     @Autowired
     private LancamentoService lancamentoService;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         BDDMockito.given(this.lancamentoRepository.findByFuncionarioId(Mockito.anyLong(), Mockito.any(PageRequest.class)))
                 .willReturn(new PageImpl<Lancamento>(new ArrayList<Lancamento>()));
